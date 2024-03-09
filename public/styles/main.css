@@ -2,7 +2,7 @@ body {
   background: #222;
   font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui,
     helvetica neue, helvetica, Ubuntu, roboto, noto, arial, sans-serif;
-  color: hotpink;
+  color: rgb(165, 0, 165);
 }
 
 main {
@@ -22,15 +22,31 @@ h1 {
   font-size: 3.5rem;
 }
 
+.form-container {
+  display: flex;
+}
+
+form {
+  margin: 10px;
+}
+
 input {
   appearance: none;
   -webkit-appearance: none;
   border: 0;
+  width: 100px;
   font-size: 0.9rem;
-  background: #888;
   padding: 1rem;
-  color: white;
+  color: black;
   cursor: pointer;
+}
+
+#boy {
+  background-color: rgb(45, 166, 206);
+}
+
+#girl {
+  background-color: rgb(172, 26, 70);
 }
 
 footer {

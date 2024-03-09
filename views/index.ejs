@@ -1,0 +1,22 @@
+<%- include("partials/header.ejs") %>
+
+  <% if (locals.firstName) { %>
+    <h1>
+      <%= firstName %>
+      Osawa 
+    </h1>
+    <% } else { %>
+      <h1>Welcom to Baby Name Generator 👶</h1>
+      <% } %>
+      
+      <div class="form-container">
+        <form action="/boy" method="POST">
+          <input id="boy" type="submit" value="Boy">
+        </form>
+        
+        <form action="/girl" method="POST">
+          <input id="girl" type="submit" value="Girl">
+        </form>
+      </div>
+
+        <%- include("partials/footer.ejs") %>
