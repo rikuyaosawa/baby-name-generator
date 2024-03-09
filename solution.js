@@ -3,7 +3,7 @@ import bodyParser from "body-parser";
 
 const app = express();
 const port = 3000;
-const URL = "https://github.com/rikuyaosawa/baby-name-generator";
+const URL = "https://rikuyaosawa.github.io/baby-name-generator/";
 
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
