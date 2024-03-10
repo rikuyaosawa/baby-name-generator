@@ -18,9 +18,19 @@ main {
   text-align: center;
 }
 
+.main-block {
+  position: absolute;
+  top: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center; 
+}
+
 .baby-icon {
-  position: relative;
-  top: -120px;
+  position: absolute;
+  top: 60px;
   font-size: 10rem;
 }
 
@@ -60,6 +70,22 @@ h3.sub-name-plate {
   margin: 0 10px;
 }
 
+.detail-container {
+  display: flex;
+  text-align: left;
+  position: relative;
+  top: -80px;
+  margin-bottom: 15px;
+  border: 1.5px solid gray;
+  background-color: #eeeeee;
+  border-radius: 30px;
+  width: 700px;
+}
+
+ul {
+  font-size: 1.5rem;
+}
+
 .form-container {
   display: flex;
   position: relative;
@@ -83,15 +109,28 @@ input {
 
 #boy {
   background-color: rgb(45, 166, 206);
+  border: 2px solid rgb(75, 75, 75);
+  border-radius: 20px;
 }
 
 #girl {
   background-color: rgb(245, 52, 110);
+  border: 2px solid rgb(75, 75, 75);
+  border-radius: 20px;
 }
 
-#middle-name-button {
+.toggle-btn-container {
+  position: absolute;
+  bottom: 10px;
+  display: flex;
+}
+
+#toggle-mD-btn, #toggle-detail-btn {
   background-color: rgb(255, 255, 255);
+  border-radius: 30px;
+  padding: 10px 20px;
   font-size: 1.3rem;
+  margin: 0 10px;
 }
 
 footer {

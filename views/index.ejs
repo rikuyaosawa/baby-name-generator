@@ -1,32 +1,54 @@
 <%- include("partials/header.ejs") %>
 
 <div class="baby-icon">👶</div>
-<% if (locals.fN_name) { %>
-  <h1 class="main-name-plate">
-    <div class="first-name"><%= fN_name %></div>
-    <% if (mD_name) { %>
-      <div class="middle-name" id="middle-name">
-        <%= mD_name %>
+
+<div class="main-block">
+  <% if (locals.fN_name) { %>
+    <h1 class="main-name-plate">
+      <div class="first-name"><%= fN_name %></div>
+      <% if (mD_name) { %>
+        <div class="middle-name" id="middle-name">
+          <%= mD_name %>
+        </div>
+      <% } %>
+      <div class="last-name">Osawa</div>
+    </h1>
+  <% } else { %>
+    <h1 class="welcome-message">Welcome to Baby Name Generator</h1>
+  <% } %>
+
+  <% if (locals.fN_name) { %>
+    <h3 class="sub-name-plate"><%= fN_meaning %> : <%= mD_meaning %></h3>
+    <div class="detail-container" id="detail-container">
+      <div class="fN-container">
+        <ul>
+        - First Name
+          <li>Nickname: <%= fN_nickname %></li>
+          <li>Origin: <%= fN_origin %></li>
+          <li>Variation(s): <%= fN_variation %></li>
+        </ul>
       </div>
-    <% } %>
-    <div class="last-name">Osawa</div>
-  </h1>
-<% } else { %>
-  <h1 class="welcome-message">Welcome to Baby Name Generator</h1>
-<% } %>
+      <div class="mD-container">
+        <ul>
+        - Middle Name
+          <li>Nickname: <%= mD_nickname %></li>
+          <li>Origin: <%= mD_origin %></li>
+          <li>Variation(s): <%= mD_variation %></li>
+        </ul>
+      </div>
+    </div>
+  <% } %>
 
-<% if (locals.fN_name) { %>
-  <h3 class="sub-name-plate"><%= fN_meaning %> : <%= mD_meaning %> </h3>
-<% } %>
+  <div class="form-container">
+    <form action="/boy" method="POST">
+      <input id="boy" type="submit" value="Boy">
+    </form>
+    
+    <form action="/girl" method="POST">
+      <input id="girl" type="submit" value="Girl">
+    </form>
+  </div>
 
-<div class="form-container">
-  <form action="/boy" method="POST">
-    <input id="boy" type="submit" value="Boy">
-  </form>
-  
-  <form action="/girl" method="POST">
-    <input id="girl" type="submit" value="Girl">
-  </form>
 </div>
 
 <script> 
@@ -37,11 +59,26 @@
     } else {
       x.style.display = "none";
     }
+  }
+
+  function toggleNameDetail() {
+    var x = document.getElementById("detail-container");
+    if (x.style.display === "none") {
+      x.style.display = "flex";
+    } else {
+      x.style.display = "none";
+    }
   } 
 </script>
 
-<% if (locals.fN_name) { %>
-  <button id="middle-name-button" onclick="toggleMiddleName()">Toggle Middlename</button>
-<% } %>
+<div class="toggle-btn-container">
+  <% if (locals.fN_name) { %>
+    <button id="toggle-mD-btn" onclick="toggleMiddleName()">toggle middle-name</button>
+  <% } %>
+
+  <% if (locals.fN_name) { %>
+    <button id="toggle-detail-btn" onclick="toggleNameDetail()">toggle detail</button>
+  <% } %>
+</div>
 
 <%- include("partials/footer.ejs") %>

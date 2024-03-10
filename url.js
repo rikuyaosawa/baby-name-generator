@@ -3,8 +3,6 @@ import bodyParser from "body-parser";
 import { 
   getRandomBoyName, 
   getRandomGirlName,
-  getRandomBoyMiddleName,
-  getRandomGirlMiddleName 
 } from "./names.js";
 
 const app = express();
@@ -19,7 +17,7 @@ app.get("/", (req, res) => {
 
 app.post("/boy", (req, res) => {
   const randomBoyName = getRandomBoyName();
-  const randomMiddleName = getRandomBoyMiddleName(); 
+  const randomMiddleName = getRandomBoyName(); 
   res.render("index.ejs", {
     fN_name : randomBoyName.name,
     fN_meaning : randomBoyName.meaning,
@@ -36,7 +34,7 @@ app.post("/boy", (req, res) => {
 
 app.post("/girl", (req, res) => {
   const randomGirlName = getRandomGirlName();
-  const randomMiddleName = getRandomGirlMiddleName(); 
+  const randomMiddleName = getRandomGirlName(); 
   res.render("index.ejs", {
     fN_name : randomGirlName.name,
     fN_meaning : randomGirlName.meaning,
@@ -47,7 +45,7 @@ app.post("/girl", (req, res) => {
     mD_meaning : randomMiddleName.meaning,
     mD_nickname : randomMiddleName.nickname,
     mD_origin : randomMiddleName.origin,
-    md_variation : randomMiddleName.variation,
+    mD_variation : randomMiddleName.variation,
   });
 });
 

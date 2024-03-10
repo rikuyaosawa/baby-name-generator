@@ -6,14 +6,6 @@ export function getRandomGirlName() {
   return girlName[Math.floor(Math.random() * girlName.length)];
 };
 
-export function getRandomGirlMiddleName() {
-  return girlMiddleName[Math.floor(Math.random() * girlMiddleName.length)];
-}
-
-export function getRandomBoyMiddleName() {
-  return boyMiddleName[Math.floor(Math.random() * boyMiddleName.length)];
-}
-
 const boyName = [
   {
     name : "Ronan",
@@ -70,6 +62,17 @@ const boyName = [
     origin : "Irish",
     nickname : "Kev/Vinny",
     variation : "Kevan" 
+  },
+  {
+    name : "William",
+
+  },
+  {
+    name : "Paul",
+
+  },
+  {
+    name : "Lancelot"
   }
 ];
 
@@ -102,33 +105,18 @@ const girlName = [
     origin : "Latin/Christian",
     variation : "Nathalie/Natali"
   }, 
-];
-
-const girlMiddleName = [
   {
     name : "Grace",
-    meaning : "Gracuful"
+    meaning : "Thankful/Pleasing",
+    nickname : "Gracie/Gigi",
+    origin : "Latin",
+    variation : "Gracia/Graciella "
   },
   {
     name : "Estelle",
-    meaning : "Stars"
+    meaning : "Star",
+    nickname : "Essie/Elle",
+    origin : "Latin",
+    variation : "Stella/Estella"
   },
-  {
-    name : "Lillian",
-    meaning : ""
-  }
-];
-
-const boyMiddleName = [
-  {
-    name : "William",
-
-  },
-  {
-    name : "Paul",
-
-  },
-  {
-    name : "Lancelot"
-  }
 ];
