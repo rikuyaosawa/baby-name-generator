@@ -1,42 +1,47 @@
 <%- include("partials/header.ejs") %>
 
 <div class="baby-icon">👶</div>
-  <% if (locals.fN_name) { %>
-    <h1 class="name-plate">
-      <div class="first-name"><%= fN_name %></div>
-      <% if (locals.mD_name) { %>
-        <div class="middle-name" id="middle-name">
-          <%= mD_name %>
-        </div>
-      <% } %>
-      <div class="last-name">Osawa</div>
-    </h1>
-    <% } else { %>
-      <h1>Welcome to Baby Name Generator</h1>
-    <% } %>
-      
-      <div class="form-container">
-        <form action="/boy" method="POST">
-          <input id="boy" type="submit" value="Boy">
-        </form>
-        
-        <form action="/girl" method="POST">
-          <input id="girl" type="submit" value="Girl">
-        </form>
+<% if (locals.fN_name) { %>
+  <h1 class="main-name-plate">
+    <div class="first-name"><%= fN_name %></div>
+    <% if (mD_name) { %>
+      <div class="middle-name" id="middle-name">
+        <%= mD_name %>
       </div>
+    <% } %>
+    <div class="last-name">Osawa</div>
+  </h1>
+<% } else { %>
+  <h1 class="welcome-message">Welcome to Baby Name Generator</h1>
+<% } %>
 
-      <script> 
-        function toggleMiddleName() {
-          var x = document.getElementById("middle-name");
-          if (x.style.display === "none") {
-            x.style.display = "block";
-          } else {
-            x.style.display = "none";
-          }
-        } 
-      </script>
-      <% if (locals.fN_name) { %>
-        <button id="middle-name-button" onclick="toggleMiddleName()">Toggle Middlename</button>
-      <% } %>
+<% if (locals.fN_name) { %>
+  <h3 class="sub-name-plate"><%= fN_meaning %> : <%= mD_meaning %> </h3>
+<% } %>
 
-        <%- include("partials/footer.ejs") %>
+<div class="form-container">
+  <form action="/boy" method="POST">
+    <input id="boy" type="submit" value="Boy">
+  </form>
+  
+  <form action="/girl" method="POST">
+    <input id="girl" type="submit" value="Girl">
+  </form>
+</div>
+
+<script> 
+  function toggleMiddleName() {
+    var x = document.getElementById("middle-name");
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+  } 
+</script>
+
+<% if (locals.fN_name) { %>
+  <button id="middle-name-button" onclick="toggleMiddleName()">Toggle Middlename</button>
+<% } %>
+
+<%- include("partials/footer.ejs") %>
