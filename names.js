@@ -23,11 +23,11 @@ const boyName = [
     variation : "O'Ronan"
   }, 
   {
-    name : "Aiden/Ayden",
+    name : "Ayden",
     meaning : "Little fire",
     nickname : "Ady/Adi",
     origin : "Irish",
-    variation : "Edan (Hebrew)"
+    variation : "Aidan/Edan (Hebrew)"
   },
   {
     name : "Arthur",

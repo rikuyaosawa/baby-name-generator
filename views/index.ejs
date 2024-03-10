@@ -1,5 +1,6 @@
 <%- include("partials/header.ejs") %>
 
+<div class="baby-icon">👶</div>
   <% if (locals.fN_name) { %>
     <h1 class="name-plate">
       <div class="first-name"><%= fN_name %></div>
@@ -11,7 +12,7 @@
       <div class="last-name">Osawa</div>
     </h1>
     <% } else { %>
-      <h1>Welcome to Baby Name Generator 👶</h1>
+      <h1>Welcome to Baby Name Generator</h1>
     <% } %>
       
       <div class="form-container">
@@ -34,8 +35,8 @@
           }
         } 
       </script>
-
-       <button id="middle-name-button" onclick="toggleMiddleName()">Toggle Middlename</button>
-
+      <% if (locals.fN_name) { %>
+        <button id="middle-name-button" onclick="toggleMiddleName()">Toggle Middlename</button>
+      <% } %>
 
         <%- include("partials/footer.ejs") %>
