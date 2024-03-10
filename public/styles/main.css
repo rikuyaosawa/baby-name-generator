@@ -18,9 +18,24 @@ main {
   text-align: center;
 }
 
+header {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.header-title {
+  position: absolute;
+  text-align: left;
+  color: black;
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin: 10px 0 0 10px;
+}
+
 .main-block {
   position: absolute;
-  top: 400px;
+  top: 380px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -75,15 +90,20 @@ h3.sub-name-plate {
   text-align: left;
   position: relative;
   top: -80px;
+  width: 700px;
   margin-bottom: 15px;
   border: 1.5px solid gray;
   background-color: #eeeeee;
   border-radius: 30px;
-  width: 700px;
+  font: 1.2rem "Fira Sans", sans-serif;
 }
 
 ul {
   font-size: 1.5rem;
+}
+
+li {
+  margin: 0 15px;
 }
 
 .form-container {

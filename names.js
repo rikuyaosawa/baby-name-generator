@@ -31,48 +31,72 @@ const boyName = [
   {
     name : "Gavin",
     meaning : "God send/Falcom",
-    origin : "Scotish",
     nickname : "Gav/Vinny/Avi",
+    origin : "Scotish",
     variation : "Gawain"
   },
   {
     name : "Ernest",
     meaning : "Serious/Determined",
-    origin : "German",
     nickname : "Ernie/Ern",
+    origin : "German",
     variation : "..."
   },
   {
     name : "Andrew",
     meaning : "Strong/Manly",
-    origin : "Greek",
     nickname : "Andy/Drew",
+    origin : "Greek",
     variation : "Anderson/Andrei"
   },
   {
     name : "William",
     meaning : "Resolute Protector",
-    origin : "German (Wilhelm)",
     nickname : "Bill/Willem/Willy",
+    origin : "German (Wilhelm)",
     variation : "Liam/Will"
   },
   {
     name : "Kevin",
     meaning : "Handsome",
-    origin : "Irish",
     nickname : "Kev/Vinny",
+    origin : "Irish",
     variation : "Kevan" 
   },
   {
-    name : "William",
-
+    name : "Kian",
+    meaning : "Ancient/Enduring one/King",
+    nickname : "Kee/Ki",
+    origin : "Irish/Persian",
+    variation : "Cian/Keane"
   },
   {
     name : "Paul",
-
+    meaning : "Small/Humble",
+    nickname : "Po/Paulie",
+    origin : "Latin",
+    variation : "Paulo/Pablo"
   },
   {
-    name : "Lancelot"
+    name : "Lancelot",
+    meaning : "Servant/God-like",
+    nickname : "Lan/Lanny",
+    origin : "German",
+    variation : "Launcelot"
+  },
+  {
+    name : "Michael",
+    meaning : "Who is like God",
+    nickname : "Mikey/Micah/Mike",
+    origin : "Hebrew",
+    variation : "Michel/Mikhail/Miguel"
+  },
+  {
+    name : "Cameron",
+    meaning : "Crooked",
+    nickname : "Cam/Cammy",
+    origin : "Scottish",
+    variation : "Kameron"
   }
 ];
 
@@ -82,12 +106,12 @@ const girlName = [
     meaning : "Defender/Helper of mankind",
     nickname : "Sash/Sass",
     origin : "Slavic/Russian",
-    variation : "Sacha (French) /Sascia (Italian)"
+    variation : "Sacha/Sascia"
   }, 
   {
     name : "Mila",
-    meaning : "Miracle/Dear one/Gracious",
-    nickname : "...",
+    meaning : "Miracle/Dear one",
+    nickname : "Milie",
     origin : "Spanish/Slavic",
     variation : "Milana/Milena"
   }, 
@@ -110,7 +134,7 @@ const girlName = [
     meaning : "Thankful/Pleasing",
     nickname : "Gracie/Gigi",
     origin : "Latin",
-    variation : "Gracia/Graciella "
+    variation : "Gracia/Graciella"
   },
   {
     name : "Estelle",
@@ -119,4 +143,46 @@ const girlName = [
     origin : "Latin",
     variation : "Stella/Estella"
   },
+  {
+    name : "Faith",
+    meaning : "Trust/Devotion",
+    nickname : "Fay/Fe",
+    origin : "English",
+    variation : "Faye/Vera"
+  },
+  {
+    name : "Vera",
+    meaning : "Faith/Truth",
+    nickname : "Vivi/Rara",
+    origin : "Slavic/Latin",
+    variation : "Vira/Varya"
+  },
+  {
+    name : "France",
+    meaning : "Free one",
+    nickname : "Fanny",
+    origin : "Latin",
+    variation : "Franc/Franz"
+  },
+  {
+    name : "Violet",
+    meaning : "Purple",
+    nickname : "Letty/Vivie",
+    origin : "Latin",
+    variation : "Violetta/Viola"
+  },
+  {
+    name : "Amelia",
+    meaning : "Industrious/Hardworking",
+    nickname : "Amy/Mia",
+    origin : "Hebrew",
+    variation : "Emilia/Amelie"
+  },
+  {
+    name : "Emilia",
+    meaning : "Laborious/Eager",
+    nickname : "Emi/Mia/Lia",
+    origin : "Latin",
+    variation : "Milia/Mila"
+  }
 ];

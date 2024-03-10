@@ -28,7 +28,7 @@ app.post("/boy", (req, res) => {
     mD_meaning : randomMiddleName.meaning,
     mD_nickname : randomMiddleName.nickname,
     mD_origin : randomMiddleName.origin,
-    md_variation : randomMiddleName.variation,
+    mD_variation : randomMiddleName.variation,
   });
 });
 

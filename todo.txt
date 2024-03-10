@@ -1,5 +1,6 @@
 // To DO list
 
-- Switch First and Middle Name and see how the name flows
-- Show the meaning of each name below the name
-- Create a button where you can see more details for a name
+- Add a btn that swiches First and Middle Name and see how the name flows
+- Add a btn that saves that particular name into the favorite name database
+  - If dupulicate -> alert -> don't save
+  - delete function -> alert
