@@ -1,13 +1,18 @@
 <%- include("partials/header.ejs") %>
 
-  <% if (locals.firstName) { %>
-    <h1>
-      <%= firstName %>
-      Osawa 
+  <% if (locals.fN_name) { %>
+    <h1 class="name-plate">
+      <div class="first-name"><%= fN_name %></div>
+      <% if (locals.mD_name) { %>
+        <div class="middle-name" id="middle-name">
+          <%= mD_name %>
+        </div>
+      <% } %>
+      <div class="last-name">Osawa</div>
     </h1>
     <% } else { %>
-      <h1>Welcom to Baby Name Generator 👶</h1>
-      <% } %>
+      <h1>Welcome to Baby Name Generator 👶</h1>
+    <% } %>
       
       <div class="form-container">
         <form action="/boy" method="POST">
@@ -18,5 +23,19 @@
           <input id="girl" type="submit" value="Girl">
         </form>
       </div>
+
+      <script> 
+        function toggleMiddleName() {
+          var x = document.getElementById("middle-name");
+          if (x.style.display === "none") {
+            x.style.display = "block";
+          } else {
+            x.style.display = "none";
+          }
+        } 
+      </script>
+
+       <button id="middle-name-button" onclick="toggleMiddleName()">Toggle Middlename</button>
+
 
         <%- include("partials/footer.ejs") %>

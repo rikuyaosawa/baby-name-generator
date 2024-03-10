@@ -1,7 +1,11 @@
 import express from "express";
 import bodyParser from "body-parser";
-import { getRandomBoyName } from "./names.js";
-import { getRandomGirlName } from "./names.js";
+import { 
+  getRandomBoyName, 
+  getRandomGirlName,
+  getRandomBoyMiddleName,
+  getRandomGirlMiddleName 
+} from "./names.js";
 
 const app = express();
 const port = 3000;
@@ -15,17 +19,35 @@ app.get("/", (req, res) => {
 
 app.post("/boy", (req, res) => {
   const randomBoyName = getRandomBoyName();
-  console.log("Boy's first name:", randomBoyName.name);
+  const randomMiddleName = getRandomBoyMiddleName(); 
   res.render("index.ejs", {
-    firstName : randomBoyName.name,
+    fN_name : randomBoyName.name,
+    fN_meaning : randomBoyName.meaning,
+    fN_nickname : randomBoyName.nickname,
+    fN_origin : randomBoyName.origin,
+    fN_variation : randomBoyName.variation,
+    mD_name : randomMiddleName.name,
+    mD_meaning : randomMiddleName.meaning,
+    mD_nickname : randomMiddleName.nickname,
+    mD_origin : randomMiddleName.origin,
+    md_variation : randomMiddleName.variation,
   });
 });
 
 app.post("/girl", (req, res) => {
   const randomGirlName = getRandomGirlName();
-  console.log("Girl's first name:", randomGirlName.name);
+  const randomMiddleName = getRandomGirlMiddleName(); 
   res.render("index.ejs", {
-    firstName : randomGirlName.name,
+    fN_name : randomGirlName.name,
+    fN_meaning : randomGirlName.meaning,
+    fN_nickname : randomGirlName.nickname,
+    fN_origin : randomGirlName.origin,
+    fN_variation : randomGirlName.variation,
+    mD_name : randomMiddleName.name,
+    mD_meaning : randomMiddleName.meaning,
+    mD_nickname : randomMiddleName.nickname,
+    mD_origin : randomMiddleName.origin,
+    md_variation : randomMiddleName.variation,
   });
 });
 
