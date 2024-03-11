@@ -4,3 +4,5 @@
 - Add a btn that saves that particular name into the favorite name database
   - If dupulicate -> alert -> don't save
   - delete function -> alert
+- Add an access to a database of names, where user can post, patch, and delete names.
+- Add a btn to toggle either first name or middle name to freeze in its position

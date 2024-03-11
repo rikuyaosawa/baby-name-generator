@@ -1,5 +1,5 @@
 body {
-  background: #ffffff;
+  background: #fffcef;
   font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui,
     helvetica neue, helvetica, Ubuntu, roboto, noto, arial, sans-serif;
   color: rgb(187, 14, 255);
@@ -76,9 +76,10 @@ h3.sub-name-plate {
   display: flex;
   position: relative;
   top: -80px;
-  color: rgb(156, 20, 156);
+  color: rgb(0, 0, 0);
   justify-content: center;
-  width: 1000px; 
+  width: 100%; 
+  font-style: italic;
 }
 
 .first-name, .middle-name, .last-name {
@@ -89,21 +90,14 @@ h3.sub-name-plate {
   display: flex;
   text-align: left;
   position: relative;
+  justify-content: center;
   top: -80px;
-  width: 700px;
+  width: 600px;
   margin-bottom: 15px;
-  border: 1.5px solid gray;
+  color: black;
   background-color: #eeeeee;
   border-radius: 30px;
-  font: 1.2rem "Fira Sans", sans-serif;
-}
-
-ul {
-  font-size: 1.5rem;
-}
-
-li {
-  margin: 0 15px;
+  font-size: 1.3rem;
 }
 
 .form-container {

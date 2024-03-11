@@ -97,6 +97,34 @@ const boyName = [
     nickname : "Cam/Cammy",
     origin : "Scottish",
     variation : "Kameron"
+  },
+  {
+    name : "Akira",
+    meaning : "Bright/Clear",
+    nickname : "Aki/Kira",
+    origin : "Japanese",
+    variation : "..."
+  },
+  {
+    name : "Edric",
+    meaning : "Rich/Powerful",
+    nickname : "Eds",
+    origin : "Anglo Saxon",
+    variation : "Cedric"
+  },
+  {
+    name : "Mishael",
+    meaning : "Who is like God",
+    nickname : "Misha",
+    origin : "Hebrew",
+    variation : "Michael"
+  },
+  {
+    name : "Azariah",
+    meaning : "Helped by God",
+    nickname : "Raya", 
+    origin : "Hebrew",
+    variation : "Azuria" 
   }
 ];
 
@@ -184,5 +212,33 @@ const girlName = [
     nickname : "Emi/Mia/Lia",
     origin : "Latin",
     variation : "Milia/Mila"
+  },
+  {
+    name : "Sylvia",
+    meaning : "Woods/Forest",
+    nickname : "Silla/Silvie",
+    origin : "Latin",
+    variation : "Sylwia"
+  },
+  {
+    name : "Emma",
+    meaning : "Entire/Universe",
+    nickname : "Emy/Ima",
+    origin : "German",
+    variation : "Irmina/Emmeline"
+  },
+  {
+    name : "Maya",
+    meaning : "Love/Affection",
+    nickname : "...",
+    origin : "Japanese",
+    variation : "Miya"
+  },
+  {
+    name : "Lucy",
+    meaning : "Light bringer",
+    nickname : "Lu",
+    origin : "Latin",
+    variation : "Lucianna"
   }
 ];
