@@ -51,6 +51,10 @@ app.get("/home", (req, res) => {
   res.redirect("/");
 });
 
+app.get("/about", (req, res) => {
+  res.render("about.ejs");
+})
+
 app.post("/boy", async (req, res) => {
 
   const chosenFirstName = await getRandomName("boy");
