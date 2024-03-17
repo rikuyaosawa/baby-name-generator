@@ -46,8 +46,11 @@
       </div>
     </div>
   <% } %>
-
-  <div class="form-container">
+  
+  <% if (!locals.fN_name) { %>
+    <div class="form-header">Generate Names ⬇️</div>
+  <% } %>
+    <div class="form-container">
     <form action="/boy" method="POST">
       <input id="boy" type="submit" value="Boy">
     </form>
