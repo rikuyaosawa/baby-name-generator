@@ -2,7 +2,7 @@ body {
   background: #fffcef;
   font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui,
     helvetica neue, helvetica, Ubuntu, roboto, noto, arial, sans-serif;
-  color: rgb(187, 14, 255);
+  color: #6A01FE;
 }
 
 main {
@@ -24,13 +24,25 @@ header {
   width: 100%;
 }
 
-.header-title {
+.header-logo {
   position: absolute;
   text-align: left;
-  color: black;
-  font-weight: bold;
-  font-size: 1.5rem;
   margin: 10px 0 0 10px;
+}
+
+img {
+  width: 200px;
+}
+
+.header-items {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 50px;
+}
+
+#home-btn {
+  background-color: transparent;
+  color: #6A01FE;
 }
 
 .main-block {
@@ -52,8 +64,8 @@ header {
 h1.welcome-message {
   display: flex;
   position: relative;
-  top: -100px;
-  margin: 0 0 40px 0;
+  top: -80px;
+  margin: 20px 0 40px 0;
   justify-content: center;
   font-size: 3.5rem;
   width: 1000px; 

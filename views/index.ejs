@@ -1,10 +1,14 @@
 <%- include("partials/header.ejs") %>
 <header>
-  <% if (locals.fN_name) { %>
-    <div class="header-title">Baby Name Generator</div>
-  <% } %>
+  <div class="header-logo">
+    <img src="images/baby-name-generator-logo.png" />
+  </div>
+  <div class="header-items">
+    <form action="/home" method="GET">
+      <input id="home-btn" type="submit" value="HOME">
+    </form>
+  </div>
 </header>
-
 
 <div class="baby-icon">👶</div>
 

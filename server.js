@@ -1,6 +1,7 @@
 import express from "express";
 import bodyParser from "body-parser";
 import pg from "pg";
+import morgan from "morgan";
 
 const app = express();
 const port = 3000;
@@ -17,6 +18,7 @@ db.connect();
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
+app.use(morgan("dev"));
 
 async function getRandomName(gender) {
 
@@ -27,11 +29,6 @@ async function getRandomName(gender) {
   } else if (gender === "girl") {
     dbName = "girl_name";
   }
-
-  const count = await db.query(`
-    SELECT COUNT(*)
-    FROM ${dbName}
-  `);
 
   const result = await db.query(`
     SELECT * 
@@ -48,6 +45,10 @@ async function getRandomName(gender) {
 
 app.get("/", (req, res) => {
   res.render("index.ejs");
+});
+
+app.get("/home", (req, res) => {
+  res.redirect("/");
 });
 
 app.post("/boy", async (req, res) => {
