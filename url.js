@@ -28,26 +28,23 @@ async function getRandomName(gender) {
     dbName = "girl_name";
   }
 
-  const count = await db.query(
-    `SELECT COUNT(*) \
-    FROM ${dbName}`
-  );
+  const count = await db.query(`
+    SELECT COUNT(*)
+    FROM ${dbName}
+  `);
 
-  const numOfNames = count.rows[0].count
-  const randomID = Math.floor(1 + (Math.random() * numOfNames));
-
-  const result = await db.query(
-    `SELECT * \
-    FROM ${dbName} \
-    WHERE id = ${randomID}`
-  );
+  const result = await db.query(`
+    SELECT * 
+    FROM ${dbName} 
+    ORDER BY random()
+    LIMIT 1
+  `);
 
   // console.log(result.rows)
   console.log(result.rows[0].name);
   
   return result.rows[0];
 }
-
 
 app.get("/", (req, res) => {
   res.render("index.ejs");

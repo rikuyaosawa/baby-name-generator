@@ -1,3 +1,5 @@
+How to reset password for postgres: https://www.postgresqltutorial.com/postgresql-administration/postgresql-reset-password/
+
 // To DO list
 
 - Add a btn that swiches First and Middle Name and see how the name flows
