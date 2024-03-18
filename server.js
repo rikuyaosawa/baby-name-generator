@@ -1,47 +1,15 @@
 import express from "express";
 import bodyParser from "body-parser";
-import pg from "pg";
 import morgan from "morgan";
+
+import { getRandomName } from "./src/db_connect.js";
 
 const app = express();
 const port = 3000;
 
-const db = new pg.Client({
-  user: "postgres",
-  host: "localhost",
-  database: "name",
-  password: "postgres",
-  port: 5432,
-});
-
-db.connect();
-
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 app.use(morgan("dev"));
-
-async function getRandomName(gender) {
-
-  let dbName;
-
-  if (gender === "boy") {
-    dbName = "boy_name";
-  } else if (gender === "girl") {
-    dbName = "girl_name";
-  }
-
-  const result = await db.query(`
-    SELECT * 
-    FROM ${dbName} 
-    ORDER BY random()
-    LIMIT 1
-  `);
-
-  // console.log(result.rows)
-  console.log(result.rows[0].name);
-  
-  return result.rows[0];
-}
 
 app.get("/", (req, res) => {
   res.redirect("home.ejs");
@@ -99,4 +67,3 @@ app.post("/girl", async (req, res) => {
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
 });
-
