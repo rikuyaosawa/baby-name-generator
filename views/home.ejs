@@ -1,0 +1,12 @@
+<%- include("partials/header.ejs") %>
+<%- include("main-header.ejs") %>
+
+<div class="baby-icon">👶</div>
+
+<h1 class="welcome-message">Welcome to Baby Name Generator</h1>
+
+<form action="/name-generator" method="GET">
+  <input id="generate-name-btn" type="submit" value="Generate Names">
+</form>
+
+<%- include("partials/footer.ejs") %>

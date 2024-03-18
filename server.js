@@ -44,15 +44,19 @@ async function getRandomName(gender) {
 }
 
 app.get("/", (req, res) => {
-  res.render("index.ejs");
+  res.redirect("home.ejs");
 });
 
 app.get("/home", (req, res) => {
-  res.redirect("/");
+  res.render("home.ejs");
 });
 
 app.get("/about", (req, res) => {
   res.render("about.ejs");
+})
+
+app.get("/name-generator", (req, res) => {
+  res.render("name-generator.ejs");
 })
 
 app.post("/boy", async (req, res) => {
@@ -60,7 +64,7 @@ app.post("/boy", async (req, res) => {
   const chosenFirstName = await getRandomName("boy");
   const chosenMiddleName = await getRandomName("boy");
 
-  res.render("index.ejs", {
+  res.render("name-generator.ejs", {
     fN_name : chosenFirstName.name,
     fN_meaning : chosenFirstName.meaning,
     fN_nickname : chosenFirstName.nickname,
@@ -78,7 +82,7 @@ app.post("/girl", async (req, res) => {
   const chosenFirstName = await getRandomName("girl");
   const chosenMiddleName = await getRandomName("girl"); 
 
-  res.render("index.ejs", {
+  res.render("name-generator.ejs", {
     fN_name : chosenFirstName.name,
     fN_meaning : chosenFirstName.meaning,
     fN_nickname : chosenFirstName.nickname,

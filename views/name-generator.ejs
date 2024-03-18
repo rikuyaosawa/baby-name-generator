@@ -16,7 +16,7 @@
       <div class="last-name">Osawa</div>
     </h1>
   <% } else { %>
-    <h1 class="welcome-message">Welcome to Baby Name Generator</h1>
+    <h1 class="no-name-plate">Generate Names ⬇️</h1>
   <% } %>
 
   <% if (locals.fN_name) { %>
@@ -39,9 +39,10 @@
     </div>
   <% } %>
   
-  <% if (!locals.fN_name) { %>
-    <div class="form-header">Generate Names ⬇️</div>
-  <% } %>
+  <!-- <% if (!locals.fN_name) { %>
+    <h2 class="form-header">Generate Names ⬇️</h2>
+  <% } %> -->
+
     <div class="form-container">
     <form action="/boy" method="POST">
       <input id="boy" type="submit" value="Boy">
