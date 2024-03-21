@@ -12,7 +12,7 @@ app.use(express.static("public"));
 app.use(morgan("dev"));
 
 app.get("/", (req, res) => {
-  res.redirect("home.ejs");
+  res.redirect("/home");
 });
 
 app.get("/home", (req, res) => {
@@ -21,6 +21,10 @@ app.get("/home", (req, res) => {
 
 app.get("/about", (req, res) => {
   res.render("about.ejs");
+})
+
+app.get("/names", (req, res) => {
+  res.redirect("/name-generator")
 })
 
 app.get("/name-generator", (req, res) => {

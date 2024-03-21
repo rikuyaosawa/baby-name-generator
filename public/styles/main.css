@@ -50,14 +50,14 @@ img#logo {
   margin-right: 20px;
 }
 
-input#home-btn, input#about-btn {
+input#navi-btn {
   background-color: transparent;
   color: #6A01FE;
   margin: 5px 0;
   padding: 1rem;
 }
 
-input#home-btn:hover, input#about-btn:hover {
+input#navi-btn:hover {
   color: #360280;
 }
 
@@ -67,9 +67,14 @@ input#home-btn:hover, input#about-btn:hover {
   justify-content: center;
   flex-direction: column;
   text-align: center;
+  width: 40%;
   height: 60%;
   border-radius: 30px;
   box-shadow: 2px 2px 13px 13px rgb(219, 197, 255);
+}
+
+.main-block:hover {
+  box-shadow: 2px 2px 13px 13px #a169f0;
 }
 
 .baby-icon {
@@ -150,10 +155,20 @@ h3.sub-name-plate {
   text-align: left;
   justify-content: center;
   width: 600px;
-  margin-left: 15px;
+  margin: 15px 15px;
   color: black;
   border-radius: 30px;
   font-size: 1.3rem;
+}
+
+.fN-container, .mD-container {
+  margin: 0 20px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
 
 .form-container {
