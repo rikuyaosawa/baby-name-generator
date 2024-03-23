@@ -21,15 +21,23 @@ app.get("/home", (req, res) => {
 
 app.get("/about", (req, res) => {
   res.render("about.ejs");
-})
+});
 
 app.get("/names", (req, res) => {
-  res.redirect("/name-generator")
-})
+  res.redirect("/name-generator");
+});
+
+app.get("/edit", (req, res) => {
+  res.render("edit.ejs");
+});
+
+app.get("/edit/add", (req, res) => {
+  res.render("add-name.ejs");
+});
 
 app.get("/name-generator", (req, res) => {
   res.render("name-generator.ejs");
-})
+});
 
 app.post("/boy", async (req, res) => {
 

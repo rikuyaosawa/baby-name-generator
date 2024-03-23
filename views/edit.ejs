@@ -1,0 +1,20 @@
+<%- include("partials/header.ejs") %>
+<%- include("main-header.ejs") %>
+
+<div class="baby-icon">👶</div>
+
+<div class="main-block">
+  <h1>Edit Names</h1>
+  <form action="/edit/database" method="GET">
+    <input id="see-database-btn" type="submit" value="SEE DATABASE">
+  </form>
+  <form action="/edit/add" method="GET">
+    <input id="add-name-btn" type="submit" value="ADD">
+  </form>
+  <form action="/edit/delete" method="GET">
+    <input id="add-name-btn" type="submit" value="DELETE">
+  </form>
+ 
+</div>
+
+<%- include("partials/footer.ejs") %>
