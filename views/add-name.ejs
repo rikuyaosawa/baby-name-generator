@@ -2,8 +2,30 @@
 <%- include("main-header.ejs") %>
 
 <div class="main-block">
-  <h1>Add Names</h1>
-  <form action="/"></form>
+  <h1>Add Name</h1>
+  <form action="/" method="POST" id="add-name-form">
+
+    <div class="add-name-form-items">
+      <label for="name">Name: </label>
+      <input type="text" id="name-input" name="name"><br>
+      <label for="meaning">Meaning: </label>
+      <input type="text" id="meaning-input" name="meaning"><br>
+      <label for="nickname">Nickname: </label>
+      <input type="text" id="nickname-input" name="nickname"><br>
+      <label for="origin">Origin: </label>
+      <input type="text" id="origin-input" name="origin"><br>
+      <label for="variation">Variation: </label>
+      <input type="text" id="name-input" name="variation"><br>
+
+      <input type="radio" id="gender-boy" name="gender" value="Boy" />
+      <label for="gender-boy">Boy</label>
+      <input type="radio" id="gender-girl" name="gender" value="Girl" />
+      <label for="gender-girl">Girl</label><br>
+
+      <input type="submit" id="add-submit-btn" value="submit">
+    </div>
+
+  </form>
 </div>
 
 

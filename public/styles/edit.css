@@ -1,0 +1,23 @@
+#add-name-form input[type="text"] {
+	width: 100%;
+	color: black;
+	padding: 8px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+	margin-bottom: 10px;
+}
+
+#add-name-form input[type="radio"] {
+	margin: 20px 0 0 15px;
+	height: 20px;
+	width: 15px;
+}
+
+#add-name-form input[type="submit"] {
+	margin: 30px;
+}
+
+#add-name-form label {
+	font-size: 20px;
+}
