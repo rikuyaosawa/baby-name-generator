@@ -3,6 +3,7 @@ import bodyParser from "body-parser";
 import morgan from "morgan";
 
 import { getRandomName } from "./src/db_connect.js";
+import { validateName } from "./src/validateName.js";
 
 const app = express();
 const port = 3000;
@@ -35,11 +36,16 @@ app.get("/edit/add", (req, res) => {
   res.render("add-name.ejs");
 });
 
+app.post("/add-name", (req, res) => {
+  const data = req.body;
+  validateName(data);
+});
+
 app.get("/name-generator", (req, res) => {
   res.render("name-generator.ejs");
 });
 
-app.post("/boy", async (req, res) => {
+app.get("/boy", async (req, res) => {
 
   const chosenFirstName = await getRandomName("boy");
   const chosenMiddleName = await getRandomName("boy");
@@ -58,9 +64,9 @@ app.post("/boy", async (req, res) => {
   });
 });
 
-app.post("/girl", async (req, res) => {
+app.get("/girl", async (req, res) => {
   const chosenFirstName = await getRandomName("girl");
-  const chosenMiddleName = await getRandomName("girl"); 
+  const chosenMiddleName = await getRandomName("girl");
 
   res.render("name-generator.ejs", {
     fN_name : chosenFirstName.name,

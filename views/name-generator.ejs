@@ -40,18 +40,18 @@
   <% } %>
 
   <div class="form-container">
-    <form action="/boy" method="POST">
+    <form action="/boy" method="get">
       <input id="boy" type="submit" value="Boy">
     </form>
-    
-    <form action="/girl" method="POST">
+
+    <form action="/girl" method="get">
       <input id="girl" type="submit" value="Girl">
     </form>
   </div>
 
 </div>
 
-<script> 
+<script>
   function toggleMiddleName() {
     var x = document.getElementById("middle-name");
     if (x.style.display === "none") {
@@ -68,7 +68,7 @@
     } else {
       x.style.display = "none";
     }
-  } 
+  }
 </script>
 
 <div class="toggle-btn-container">
