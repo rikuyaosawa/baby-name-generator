@@ -4,11 +4,31 @@
 <body class="edit-main">
 
 	<div class="main-block">
-		<h1><%= success %></h1>
 
-		<form action="/edit/add" method="get">
-			<input id="add-name-btn" type="submit" value="GO BACK">
-		</form>
+		<% if (locals.data) { %>
+			<div class="confirmation">
+				<h1>Are you sure?</h1>
+				<h2><%= message %></h2>
+				<p><%= data.name %></p>
+				<p><%= data.meaning %></p>
+				<p><%= data.nickname %></p>
+				<p><%= data.origin %></p>
+				<p><%= data.variation %></p>
+				<p><%= data.gender %></p>
+			</di>
+			<form action="/confirm" method="get">
+				<input id="df-btn" type="submit" value="CONFIRM">
+			</form>
+		<% } %>
+
+
+
+		<% if (locals.success) { %>
+			<h1><%= success %></h1>
+			<form action="/edit/add" method="get">
+				<input id="df-btn" type="submit" value="GO BACK">
+			</form>
+		<% } %>
 	</div>
 
 </body>

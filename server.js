@@ -42,13 +42,19 @@ app.post("/add-name", (req, res) => {
   const result = validateName(data);
   if (result == "Success") {
     res.render("edit-confirmation.ejs", {
-      success : "Name successfully added.",
+      message : "You are about to add this name",
       data : data
-    })
+    });
   } else {
     console.error("Error. Name failed to be added:", result);
     res.redirect("/edit/add");
   }
+});
+
+app.get("/confirm", (req, res) => {
+  res.render("edit-confirmation.ejs", {
+    success : "Name successfully added.",
+  });
 });
 
 app.get("/name-generator", (req, res) => {

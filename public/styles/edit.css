@@ -71,17 +71,12 @@ label#gender-girl {
 	color: rgb(251, 168, 168);
 }
 
-input#name-submit-btn {
-	background-color: white;
-	color: black;
-	font-size: 15px;
-	width: 140px;
-	border-radius: 35px;
-	padding: 13px 8px;
-}
-
 input#name-submit-btn:hover {
 	background-color: rgb(215, 215, 215);
+}
+
+.confirmation {
+	color: white;
 }
 
 footer.edit-footer {

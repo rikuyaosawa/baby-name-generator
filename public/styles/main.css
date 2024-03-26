@@ -28,6 +28,15 @@ input {
   cursor: pointer;
 }
 
+input#df-btn {
+	background-color: white;
+	color: black;
+	font-size: 15px;
+	width: 140px;
+	border-radius: 35px;
+	padding: 13px 8px;
+}
+
 header {
   position: absolute;
   top: 0;
