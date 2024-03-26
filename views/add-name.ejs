@@ -5,6 +5,9 @@
 
   <div class="main-block">
     <h1 class="add-name-header">Add Name</h1>
+    <% if (locals.error) { %>
+      <p style="color: red;">*<%= error %></p>
+    <% } %>
     <form action="/add-name" method="post" id="add-name-form">
 
       <div class="add-name-form-items">

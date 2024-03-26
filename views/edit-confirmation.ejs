@@ -6,6 +6,7 @@
 	<div class="main-block">
 
 		<% if (locals.data) { %>
+			<!-- TODO: Style this -->
 			<div class="confirmation">
 				<h1>Are you sure?</h1>
 				<h2><%= message %></h2>
@@ -21,14 +22,13 @@
 			</form>
 		<% } %>
 
-
-
 		<% if (locals.success) { %>
 			<h1><%= success %></h1>
 			<form action="/edit/add" method="get">
 				<input id="df-btn" type="submit" value="GO BACK">
 			</form>
 		<% } %>
+
 	</div>
 
 </body>
