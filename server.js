@@ -38,7 +38,17 @@ app.get("/edit/add", (req, res) => {
 
 app.post("/add-name", (req, res) => {
   const data = req.body;
-  validateName(data);
+  console.log(data);
+  const result = validateName(data);
+  if (result == "Success") {
+    res.render("edit-confirmation.ejs", {
+      success : "Name successfully added.",
+      data : data
+    })
+  } else {
+    console.error("Error. Name failed to be added:", result);
+    res.redirect("/edit/add");
+  }
 });
 
 app.get("/name-generator", (req, res) => {
