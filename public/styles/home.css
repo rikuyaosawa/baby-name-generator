@@ -1,24 +1,40 @@
 h1.welcome-message {
-  display: flex;
-  position: relative;
-  top: -30px;
-  margin: 20px 0 20px 0;
-  justify-content: center;
-  font-size: 3.5rem;
-  width: 1000px;
+	display: flex;
+	position: relative;
+	top: -30px;
+	margin: 20px 0 20px 0;
+	justify-content: center;
+	font-size: 3.5rem;
+	width: 1000px;
 }
 
 input#generate-name-btn {
-  background-color: #dddbd1;
-  color: rgb(87, 87, 87);
-  width: 200px;
-  border-radius: 20px;
-  padding: 15px 10px;
+	background-color: rgb(255, 255, 255);
+	font-size: 15px;
+	width: 200px;
+	color: rgb(0, 0, 0);
+	border: 2px solid rgb(0, 0, 0);
+	border-radius: 35px;
+	padding: 18px 8px;
 }
 
 input#generate-name-btn:hover {
-  background-color: rgb(139, 139, 139);
-  color: rgb(255, 255, 255);
-  width: 200px;
-  border-radius: 20px;
+	background-color: rgb(196, 196, 196);
+}
+
+.edit-form {
+  	position: absolute;
+  	bottom: 10px;
+}
+
+input#edit-btn {
+	background-color: rgb(0, 0, 0);
+	font-size: 15px;
+	width: 200px;
+	border-radius: 35px;
+	padding: 18px 8px;
+}
+
+input#edit-btn:hover {
+  	background-color: rgb(70, 70, 70);
 }
