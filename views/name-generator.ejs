@@ -48,34 +48,4 @@
 
 </div>
 
-<script>
-  function toggleMiddleName() {
-    var x = document.getElementById("middle-name");
-    if (x.style.display === "none") {
-      x.style.display = "block";
-    } else {
-      x.style.display = "none";
-    }
-  }
-
-  function toggleNameDetail() {
-    var x = document.getElementById("detail-container");
-    if (x.style.display === "none") {
-      x.style.display = "flex";
-    } else {
-      x.style.display = "none";
-    }
-  }
-</script>
-
-<div class="toggle-btn-container">
-  <% if (locals.fN_name) { %>
-    <button id="toggle-mD-btn" onclick="toggleMiddleName()">toggle middle-name</button>
-  <% } %>
-
-  <% if (locals.fN_name) { %>
-    <button id="toggle-detail-btn" onclick="toggleNameDetail()">toggle detail</button>
-  <% } %>
-</div>
-
 <%- include("partials/footer.ejs") %>

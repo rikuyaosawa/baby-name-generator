@@ -8,12 +8,14 @@ import { validateName } from "./src/validateName.js";
 const app = express();
 const port = 3000;
 
+///// MIDDLEWARE /////
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 app.use(morgan("dev"));
 
+///// NAVIGATION /////
 app.get("/", (req, res) => {
-  res.redirect("/home");
+res.redirect("/home");
 });
 
 app.get("/home", (req, res) => {
@@ -32,6 +34,7 @@ app.get("/edit", (req, res) => {
   res.render("edit/edit-main.ejs");
 });
 
+///// EDIT /////
 app.get("/edit/database", (req, res) => {
   res.render("edit/edit-database.ejs")
 });
@@ -67,6 +70,7 @@ app.get("/confirm", (req, res) => {
   });
 });
 
+///// GENERATOR /////
 app.get("/name-generator", (req, res) => {
   res.render("name-generator.ejs");
 });
@@ -100,6 +104,7 @@ app.get("/girl", async (req, res) => {
   });
 });
 
+///// PORT /////
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
 });
