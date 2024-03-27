@@ -3,18 +3,114 @@
 
 <body class="edit-main">
 
-	<div class="main-block">
-		<h1 class="edit-main-header">Select database</h1>
-		<div class="db-btn-container">
-			<form action="/boy-name-db" method="get">
-				<input id="db-boy-btn" type="submit" value="Boy name">
-			</form>
-			<form action="/girl-name-db" method="get">
-				<input id="db-girl-btn" type="submit" value="Girl name">
-			</form>
+	<div class="main-block" style="width: 80%;">
+		<% if (!locals.data) { %>
+			<h1 class="edit-main-header">Select database</h1>
+			<div class="db-btn-container">
+				<form action="/edit/boy-name-db" method="get">
+					<input id="db-boy-btn" type="submit" value="Boy name">
+				</form>
+				<form action="/edit/girl-name-db" method="get">
+					<input id="db-girl-btn" type="submit" value="Girl name">
+				</form>
+			</div>
+		<% } else { %>
+			<h1 class="edit-main-header"><%= gender %> Names</h1>
+			<table>
+				<tr>
+					<th>ID</th>
+					<th>NAME</th>
+					<th>MEANING</th>
+					<th>NICKNAME</th>
+					<th>ORIGIN</th>
+					<th>VARIATION</th>
+				</tr>
+				<tr>
+					<td><%- data[0].id %></td>
+					<td><%- data[0].name %></td>
+					<td><%- data[0].meaning %></td>
+					<td><%- data[0].nickname %></td>
+					<td><%- data[0].origin %></td>
+					<td><%- data[0].variation %></td>
+				</tr>
+				<tr>
+					<td><%- data[1].id %></td>
+					<td><%- data[1].name %></td>
+					<td><%- data[1].meaning %></td>
+					<td><%- data[1].nickname %></td>
+					<td><%- data[1].origin %></td>
+					<td><%- data[1].variation %></td>
+				</tr>
+				<tr>
+					<td><%- data[2].id %></td>
+					<td><%- data[2].name %></td>
+					<td><%- data[2].meaning %></td>
+					<td><%- data[2].nickname %></td>
+					<td><%- data[2].origin %></td>
+					<td><%- data[2].variation %></td>
+				</tr>
+				<tr>
+					<td><%- data[3].id %></td>
+					<td><%- data[3].name %></td>
+					<td><%- data[3].meaning %></td>
+					<td><%- data[3].nickname %></td>
+					<td><%- data[3].origin %></td>
+					<td><%- data[3].variation %></td>
+				</tr>
+				<tr>
+					<td><%- data[4].id %></td>
+					<td><%- data[4].name %></td>
+					<td><%- data[4].meaning %></td>
+					<td><%- data[4].nickname %></td>
+					<td><%- data[4].origin %></td>
+					<td><%- data[4].variation %></td>
+				</tr>
+				<tr>
+					<td><%- data[5].id %></td>
+					<td><%- data[5].name %></td>
+					<td><%- data[5].meaning %></td>
+					<td><%- data[5].nickname %></td>
+					<td><%- data[5].origin %></td>
+					<td><%- data[5].variation %></td>
+				</tr>
+				<tr>
+					<td><%- data[6].id %></td>
+					<td><%- data[6].name %></td>
+					<td><%- data[6].meaning %></td>
+					<td><%- data[6].nickname %></td>
+					<td><%- data[6].origin %></td>
+					<td><%- data[6].variation %></td>
+				</tr>
+				<tr>
+					<td><%- data[7].id %></td>
+					<td><%- data[7].name %></td>
+					<td><%- data[7].meaning %></td>
+					<td><%- data[7].nickname %></td>
+					<td><%- data[7].origin %></td>
+					<td><%- data[7].variation %></td>
+				</tr>
+				<tr>
+					<td><%- data[8].id %></td>
+					<td><%- data[8].name %></td>
+					<td><%- data[8].meaning %></td>
+					<td><%- data[8].nickname %></td>
+					<td><%- data[8].origin %></td>
+					<td><%- data[8].variation %></td>
+				</tr>
+				<tr>
+					<td><%- data[9].id %></td>
+					<td><%- data[9].name %></td>
+					<td><%- data[9].meaning %></td>
+					<td><%- data[9].nickname %></td>
+					<td><%- data[9].origin %></td>
+					<td><%- data[9].variation %></td>
+				</tr>
+			</table>
+
+			<h3>Total number of names: <%= numOfRows %></h3>
+			<% } %>
 		</div>
-	</div>
 
-</body>
+	</body>
 
-<%- include("../partials/edit-footer.ejs") %>
+	<%- include("../partials/edit-footer.ejs") %>

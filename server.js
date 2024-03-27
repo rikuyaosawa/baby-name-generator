@@ -2,7 +2,7 @@ import express from "express";
 import bodyParser from "body-parser";
 import morgan from "morgan";
 
-import { getRandomName } from "./src/db_connect.js";
+import { getDatabase, getNameCount, getRandomName } from "./src/db_connect.js";
 import { validateName } from "./src/validateName.js";
 
 const app = express();
@@ -35,17 +35,39 @@ app.get("/edit", (req, res) => {
 });
 
 ///// EDIT /////
-app.get("/edit/database", (req, res) => {
-  res.render("edit/edit-database.ejs")
-});
-
 app.get("/edit/add", (req, res) => {
   res.render("edit/add-name.ejs");
 });
 
-app.get("/edit/delete", (req, res) => {
-  res.render("edit/delete-name.ejs");
+app.get("/edit/database", (req, res) => {
+  res.render("edit/edit-database.ejs")
 });
+
+app.get("/edit/boy-name-db", async (req, res) => {
+  const data = await getDatabase("boy");
+  const numOfRows = await getNameCount("boy");
+
+  res.render("edit/edit-database.ejs", {
+    data : data,
+    numOfRows : numOfRows,
+    gender : "Boy"
+  });
+});
+
+app.get("/edit/girl-name-db", async (req, res) => {
+  const data = await getDatabase("girl");
+  const numOfRows = await getNameCount("girl");
+
+  res.render("edit/edit-database.ejs", {
+    data : data,
+    numOfRows : numOfRows,
+    gender : "Girl"
+  });
+});
+
+// app.get("/edit/delete", (req, res) => {
+//   res.render("edit/delete-name.ejs");
+// });
 
 app.post("/add-name", (req, res) => {
   const data = req.body;
@@ -80,8 +102,9 @@ app.get("/boy", async (req, res) => {
   var chosenFirstName = await getRandomName("boy");
   var chosenMiddleName = await getRandomName("boy");
 
-  while (chosenFirstName == chosenMiddleName) {
-    chosenMiddleName = await getRandomName("boy")
+  while (chosenFirstName["name"] == chosenMiddleName["name"]) {
+    console.info("--- Getting a new middle name ---");
+    chosenMiddleName = await getRandomName("boy");
   }
 
   res.render("name-generator.ejs", {
@@ -94,8 +117,9 @@ app.get("/girl", async (req, res) => {
   var chosenFirstName = await getRandomName("girl");
   var chosenMiddleName = await getRandomName("girl");
 
-  while (chosenFirstName == chosenMiddleName) {
-    chosenMiddleName = await getRandomName("girl")
+  while (chosenFirstName["name"] == chosenMiddleName["name"]) {
+    console.info("--- Same name: getting a new middle name ---");
+    chosenMiddleName = await getRandomName("girl");
   }
 
   res.render("name-generator.ejs", {
