@@ -1,3 +1,7 @@
+html{
+  overflow-x: hidden;
+}
+
 body {
   background: #fffcef;
   font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui,
@@ -42,9 +46,11 @@ input#df-btn:hover {
 }
 
 header {
-  position: absolute;
+  position: fixed;
+  background-color: #fffcef;
   top: 0;
   width: 100%;
+  z-index: 1;
 }
 
 .header-logo {
@@ -107,9 +113,13 @@ input#navi-btn:hover {
 }
 
 footer {
+  z-index: 2;
   position: absolute;
-  margin-left: 20px;
   left: 0;
   bottom: 0;
   color: black;
+}
+
+footer p {
+  margin-left: 10px;
 }

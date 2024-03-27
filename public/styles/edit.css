@@ -5,6 +5,31 @@ body.edit-main {
 	height: 100%;
 }
 
+.edit-header {
+	background-color: #20014b;
+	border-bottom: 2px solid black	;
+	padding-bottom: 5px;
+}
+
+.db-block {
+	position: absolute;
+	top: 100px;
+	z-index: 0;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	text-align: center;
+	width: 80%;
+	height: 100%;
+	border-radius: 30px;
+	box-shadow: 2px 2px 13px 13px rgb(219, 197, 255);
+	padding: 30px 0;
+}
+
+.db-block:hover {
+  	box-shadow: 2px 2px 13px 13px #a169f0;
+}
+
 .edit-main-header {
 	color: #9c58fc;
 }
@@ -143,6 +168,18 @@ input#name-submit-btn:hover {
 	color: white;
 }
 
-footer.edit-footer {
+.edit-footer {
+	z-index: 1;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	border-top: 3px solid black;
 	color: white;
+	background-color: #20014b;
+}
+
+.edit-footer p {
+	display: flex;
+	margin-left: 10px;
 }

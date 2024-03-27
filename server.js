@@ -65,6 +65,7 @@ app.get("/edit/girl-name-db", async (req, res) => {
   });
 });
 
+
 // app.get("/edit/delete", (req, res) => {
 //   res.render("edit/delete-name.ejs");
 // });
@@ -118,7 +119,7 @@ app.get("/girl", async (req, res) => {
   var chosenMiddleName = await getRandomName("girl");
 
   while (chosenFirstName["name"] == chosenMiddleName["name"]) {
-    console.info("--- Same name: getting a new middle name ---");
+    console.info("--- Getting a new middle name ---");
     chosenMiddleName = await getRandomName("girl");
   }
 

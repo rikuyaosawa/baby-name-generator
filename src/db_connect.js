@@ -66,7 +66,9 @@ export async function getNameCount(gender) {
     FROM ${dbName}
   `);
 
-  console.log(`Number of rows in ${dbName}: ${result.rows}`);
+  const count = result.rows[0].count;
 
-  return result.rows[0].count;
+  console.log(`Number of rows in ${dbName}: ${count}`);
+
+  return count;
 }
