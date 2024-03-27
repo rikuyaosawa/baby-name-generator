@@ -1,5 +1,5 @@
-<%- include("partials/header.ejs") %>
-<%- include("partials/main-header.ejs") %>
+<%- include("../partials/header.ejs") %>
+<%- include("../partials/main-header.ejs") %>
 
 <body class="edit-main">
 
@@ -11,19 +11,8 @@
     <form action="/edit/add" method="get">
       <input id="add-name-btn" type="submit" value="ADD">
     </form>
-    <form action="/edit/delete" method="get">
-      <input id="delete-name-btn" type="submit" value="DELETE">
-    </form>
   </div>
 
 <body>
 
-</main>
-
-<footer class="edit-footer">
-  <p>Copyright © <%= new Date().getFullYear() %>
-  </p>
-</footer>
-</body>
-
-</html>
+<%- include("../partials/edit-footer.ejs") %>

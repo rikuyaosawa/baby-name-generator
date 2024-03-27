@@ -29,11 +29,15 @@ app.get("/names", (req, res) => {
 });
 
 app.get("/edit", (req, res) => {
-  res.render("edit.ejs");
+  res.render("edit/edit-main.ejs");
 });
 
 app.get("/edit/add", (req, res) => {
-  res.render("add-name.ejs");
+  res.render("edit/add-name.ejs");
+});
+
+app.get("/edit/delete", (req, res) => {
+  res.render("edit/delete-name.ejs");
 });
 
 app.post("/add-name", (req, res) => {
@@ -41,20 +45,20 @@ app.post("/add-name", (req, res) => {
   console.log("Name inputed\n", data);
   const result = validateName(data);
   if (result == "Success") {
-    res.render("edit-confirmation.ejs", {
+    res.render("edit/edit-confirmation.ejs", {
       message : "You are about to add this name",
       data : data
     });
   } else {
     console.error("Error. Name failed to be added:", result);
-    res.render("add-name.ejs", {
+    res.render("edit/add-name.ejs", {
       error : result
     });
   }
 });
 
 app.get("/confirm", (req, res) => {
-  res.render("edit-confirmation.ejs", {
+  res.render("edit/edit-confirmation.ejs", {
     success : "Name successfully added.",
   });
 });
