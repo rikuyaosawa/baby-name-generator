@@ -1,0 +1,20 @@
+<%- include("../partials/header.ejs") %>
+<%- include("../partials/main-header.ejs") %>
+
+<body class="edit-main">
+
+	<div class="main-block">
+		<h1 class="edit-main-header">Select database</h1>
+		<div class="db-btn-container">
+			<form action="/boy-name-db" method="get">
+				<input id="db-boy-btn" type="submit" value="Boy name">
+			</form>
+			<form action="/girl-name-db" method="get">
+				<input id="db-girl-btn" type="submit" value="Girl name">
+			</form>
+		</div>
+	</div>
+
+</body>
+
+<%- include("../partials/edit-footer.ejs") %>

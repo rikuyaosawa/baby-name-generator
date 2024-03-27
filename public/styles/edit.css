@@ -25,6 +25,40 @@ body.edit-main {
 	background-color: rgb(229, 229, 229);
 }
 
+.db-btn-container {
+	display: flex;
+}
+
+.db-btn-container form {
+	margin: 10px;
+}
+
+.db-btn-container #db-boy-btn {
+	background-color: rgb(45, 166, 206);
+	color: black;
+	font-size: 15px;
+	width: 160px;
+	border-radius: 35px;
+	padding: 18px 8px;
+}
+
+.db-btn-container #db-boy-btn:hover {
+	background-color: rgb(35, 121, 150);
+}
+
+.db-btn-container #db-girl-btn {
+	background-color: rgb(245, 52, 110);
+	color: black;
+	font-size: 15px;
+	width: 160px;
+	border-radius: 35px;
+	padding: 18px 8px;
+}
+
+.db-btn-container #db-girl-btn:hover {
+	background-color: rgb(139, 31, 64);
+}
+
 #delete-name-btn:hover {
 	background-color: rgb(255, 195, 195);
 }

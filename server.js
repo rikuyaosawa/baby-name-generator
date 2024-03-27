@@ -32,6 +32,10 @@ app.get("/edit", (req, res) => {
   res.render("edit/edit-main.ejs");
 });
 
+app.get("/edit/database", (req, res) => {
+  res.render("edit/edit-database.ejs")
+});
+
 app.get("/edit/add", (req, res) => {
   res.render("edit/add-name.ejs");
 });

@@ -32,9 +32,13 @@ input#df-btn {
 	background-color: white;
 	color: black;
 	font-size: 15px;
-	width: 140px;
+	width: 160px;
 	border-radius: 35px;
-	padding: 13px 8px;
+	padding: 18px 8px;
+}
+
+input#df-btn:hover {
+  background-color: rgb(210, 210, 210);
 }
 
 header {
