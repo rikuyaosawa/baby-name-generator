@@ -4,47 +4,31 @@
 <body class="edit-main">
 
 	<div class="db-block">
-		<% if (!locals.data) { %>
-			<h1 class="edit-main-header">Select database</h1>
-			<div class="db-btn-container">
-				<form action="/edit/boy-name-db" method="get">
-					<input id="db-boy-btn" type="submit" value="Boy name">
-				</form>
-				<form action="/edit/girl-name-db" method="get">
-					<input id="db-girl-btn" type="submit" value="Girl name">
-				</form>
-			</div>
-		<% } else { %>
-			<h1 class="edit-main-header"><%= gender %> Names</h1>
-			<table>
+		<h1 class="edit-main-header"><%= gender %> Names</h1>
+		<h3>Total number of names: <%= numOfRows %></h3>
+		<table>
+			<tr>
+				<th>ID</th>
+				<th>NAME</th>
+				<th>MEANING</th>
+				<th>NICKNAME</th>
+				<th>ORIGIN</th>
+				<th>VARIATION</th>
+			</tr>
+			<% data.forEach(name => { %>
 				<tr>
-					<th>ID</th>
-					<th>NAME</th>
-					<th>MEANING</th>
-					<th>NICKNAME</th>
-					<th>ORIGIN</th>
-					<th>VARIATION</th>
+					<td><%- name.id %></td>
+					<td><%- name.name %></td>
+					<td><%- name.meaning %></td>
+					<td><%- name.nickname %></td>
+					<td><%- name.origin %></td>
+					<td><%- name.variation %></td>
 				</tr>
-				<% data.forEach(name => { %>
-					<tr>
-						<td><%- name.id %></td>
-						<td><%- name.name %></td>
-						<td><%- name.meaning %></td>
-						<td><%- name.nickname %></td>
-						<td><%- name.origin %></td>
-						<td><%- name.variation %></td>
-					</tr>
-				<% }); %>
-			</table>
+			<% }); %>
+		</table>
+	</form>
+</div>
 
-			<h3>Total number of names: <%= numOfRows %></h3>
-
-			<form action="edit/edit-data" method="get">
-
-			</form>
-		<% } %>
-		</div>
-
-	</body>
+</body>
 
 	<%- include("../partials/edit-footer.ejs") %>

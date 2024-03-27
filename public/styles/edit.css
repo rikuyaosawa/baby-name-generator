@@ -19,11 +19,11 @@ body.edit-main {
 	align-items: center;
 	flex-direction: column;
 	text-align: center;
-	width: 80%;
+	width: 70%;
 	height: 100%;
 	border-radius: 30px;
 	box-shadow: 2px 2px 13px 13px rgb(219, 197, 255);
-	padding: 30px 0;
+	padding: 20px 0;
 }
 
 .db-block:hover {
@@ -88,7 +88,7 @@ body.edit-main {
 table {
 	font-family: arial, sans-serif;
 	border-collapse: collapse;
-	width: 70%;
+	width: 65%;
 	margin: 15px;
 }
 
@@ -175,7 +175,7 @@ input#name-submit-btn:hover {
 	left: 0;
 	width: 100%;
 	border-top: 3px solid black;
-	color: white;
+	color: #9c58fc;
 	background-color: #20014b;
 }
 

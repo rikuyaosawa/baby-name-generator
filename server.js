@@ -40,7 +40,7 @@ app.get("/edit/add", (req, res) => {
 });
 
 app.get("/edit/database", (req, res) => {
-  res.render("edit/edit-database.ejs")
+  res.render("edit/select-database.ejs")
 });
 
 app.get("/edit/boy-name-db", async (req, res) => {
@@ -92,6 +92,7 @@ app.get("/confirm", (req, res) => {
     success : "Name successfully added.",
   });
 });
+
 
 ///// GENERATOR /////
 app.get("/name-generator", (req, res) => {
