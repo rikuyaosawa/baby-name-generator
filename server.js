@@ -73,8 +73,12 @@ app.get("/name-generator", (req, res) => {
 
 app.get("/boy", async (req, res) => {
 
-  const chosenFirstName = await getRandomName("boy");
-  const chosenMiddleName = await getRandomName("boy");
+  var chosenFirstName = await getRandomName("boy");
+  var chosenMiddleName = await getRandomName("boy");
+
+  while (chosenFirstName == chosenMiddleName) {
+    chosenMiddleName = await getRandomName("boy")
+  }
 
   res.render("name-generator.ejs", {
     fN_data : chosenFirstName,
@@ -83,8 +87,12 @@ app.get("/boy", async (req, res) => {
 });
 
 app.get("/girl", async (req, res) => {
-  const chosenFirstName = await getRandomName("girl");
-  const chosenMiddleName = await getRandomName("girl");
+  var chosenFirstName = await getRandomName("girl");
+  var chosenMiddleName = await getRandomName("girl");
+
+  while (chosenFirstName == chosenMiddleName) {
+    chosenMiddleName = await getRandomName("girl")
+  }
 
   res.render("name-generator.ejs", {
     fN_data : chosenFirstName,
