@@ -10,3 +10,6 @@ How to reset password for postgres: https://www.postgresqltutorial.com/postgresq
 - Add a btn to toggle either first name or middle name to freeze in its position
 - Organize server.js
 - Add an authentication page for editing names
+
+
+- validate Name

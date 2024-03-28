@@ -4,7 +4,7 @@
 <body class="edit-main">
 
 	<div class="db-block">
-		<h1 class="edit-main-header"><%= gender %> Names</h1>
+		<h1 class="edit-header-text"><%= gender %> Names</h1>
 		<div class="container">
 			<div class="more">
 				<button id="more-btn" class="more-btn">
@@ -19,17 +19,17 @@
 					</div>
 					<ul class="more-menu-items" tabindex="-1" role="menu" aria-labelledby="more-btn" aria-hidden="true">
 						<li class="more-menu-item" role="presentation">
-							<form action="/edit/add" method="get">
+							<form action="/edit/boy-name-db/add" method="get">
 								<button type="submit" class="more-menu-btn" role="menuitem">Add</button>
 							</form>
 						</li>
 						<li class="more-menu-item" role="presentation">
-							<form action="/edit/modify" method="get">
+							<form action="/edit/boy-name-db/modify" method="get">
 								<button type="submit" class="more-menu-btn" role="menuitem">Modify by ID</button>
 							</form>
 						</li>
 						<li class="more-menu-item" role="presentation">
-							<form action="/edit/delete" method="get">
+							<form action="/edit/boy-name-db/delete" method="get">
 								<button type="submit" class="more-menu-btn" role="menuitem">Delete by ID</button>
 							</form>
 						</li>

@@ -35,19 +35,15 @@ app.get("/edit", (req, res) => {
 });
 
 ///// EDIT /////
-app.get("/edit/add", (req, res) => {
-  res.render("edit/add-name.ejs");
-});
-
 app.get("/edit/database", (req, res) => {
-  res.render("edit/select-database.ejs")
+  res.render("edit/select-db.ejs")
 });
 
 app.get("/edit/boy-name-db", async (req, res) => {
   const data = await getDatabase("boy");
   const numOfRows = await getNameCount("boy");
 
-  res.render("edit/edit-database.ejs", {
+  res.render("edit/edit-boy-db.ejs", {
     data : data,
     numOfRows : numOfRows,
     gender : "Boy"
@@ -58,25 +54,31 @@ app.get("/edit/girl-name-db", async (req, res) => {
   const data = await getDatabase("girl");
   const numOfRows = await getNameCount("girl");
 
-  res.render("edit/edit-database.ejs", {
+  res.render("edit/edit-girl-db.ejs", {
     data : data,
     numOfRows : numOfRows,
     gender : "Girl"
   });
 });
 
-app.get("/edit/delete", (req, res) => {
-  res.render("edit/delete-name.ejs");
+// Add names
+app.get("/edit/boy-name-db/add", (req, res) => {
+  console.log("Adding a boy name");
+  res.render("edit/add-name.ejs", {
+    gender : "boy"
+  });
 });
 
-app.post("/edit/delete/submit", (req, res) => {
-  const data = req.body;
-  console.log("ID for deletion inputed:", data);
+app.get("/edit/girl-name-db/add", (req, res) => {
+  console.log("Adding to girl name");
+  res.render("edit/add-name.ejs", {
+    gender : "girl"
+  });
 });
 
-app.post("/edit/add/submit", (req, res) => {
+app.post("/edit/boy-name-db/add/submit", (req, res) => {
   const data = req.body;
-  console.log("Name inputed\n", data);
+  console.log("A name submitted:\n", data);
   const result = validateName(data);
   if (result == "Success") {
     res.render("edit/edit-confirmation.ejs", {
@@ -91,6 +93,44 @@ app.post("/edit/add/submit", (req, res) => {
   }
 });
 
+app.post("/edit/girl-name-db/add/submit", (req, res) => {
+  const data = req.body;
+  console.log("A name submitted:\n", data);
+  const result = validateName(data);
+  if (result == "Success") {
+    res.render("edit/edit-confirmation.ejs", {
+      message : "You are about to add this name",
+      data : data
+    });
+  } else {
+    console.error("Error. Name failed to be added:", result);
+    res.render("edit/add-name.ejs", {
+      error : result
+    });
+  }
+});
+
+// Delete names
+app.get("/edit/boy-name-db/delete", (req, res) => {
+  console.log("Deleting a boy name");
+  res.render("edit/delete-name.ejs", {
+    gender : "boy"
+  });
+});
+
+app.get("/edit/girl-name-db/delete", (req, res) => {
+  console.log("Deleting a girl name");
+  res.render("edit/delete-name.ejs", {
+    gender : "girl"
+  });
+});
+
+app.post("/edit/delete/submit", (req, res) => {
+  const data = req.body;
+  console.log("ID for deletion inputed:", data);
+});
+
+// Confirm edit
 app.get("/edit/confirm", (req, res) => {
   res.render("edit/edit-confirmation.ejs", {
     success : "Name successfully added.",

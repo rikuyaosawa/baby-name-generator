@@ -8,8 +8,9 @@
 		<% if (locals.error) { %>
 			<p>*<%= error %></p>
 		<% } %>
-		<form id="edit-name-form">
+		<form action="/" id="edit-name-form">
 			<input type="text" id="name-input" name="name" autofocus><br>
+			<input type="submit" id="df-btn" value="SUBMIT">
 		</form>
 		<form action="/edit/database" id="go-back-btn" method="get">
 			<input id="df-btn" type="submit" value="GO BACK">

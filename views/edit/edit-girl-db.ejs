@@ -1,0 +1,98 @@
+<%- include("../partials/header.ejs") %>
+<%- include("../partials/edit-main-header.ejs") %>
+
+<body class="edit-main">
+
+	<div class="db-block">
+		<h1 class="edit-header-text"><%= gender %> Names</h1>
+		<div class="container">
+			<div class="more">
+				<button id="more-btn" class="more-btn">
+					<span class="more-dot"></span>
+					<span class="more-dot"></span>
+					<span class="more-dot"></span>
+				</button>
+				<div class="more-menu">
+					<div class="more-menu-caret">
+						<div class="more-menu-caret-outer"></div>
+						<div class="more-menu-caret-inner"></div>
+					</div>
+					<ul class="more-menu-items" tabindex="-1" role="menu" aria-labelledby="more-btn" aria-hidden="true">
+						<li class="more-menu-item" role="presentation">
+							<form action="/edit/girl-name-db/add" method="get">
+								<button type="submit" class="more-menu-btn" role="menuitem">Add</button>
+							</form>
+						</li>
+						<li class="more-menu-item" role="presentation">
+							<form action="/edit/girl-name-db/modify" method="get">
+								<button type="submit" class="more-menu-btn" role="menuitem">Modify by ID</button>
+							</form>
+						</li>
+						<li class="more-menu-item" role="presentation">
+							<form action="/edit/girl-name-db/delete" method="get">
+								<button type="submit" class="more-menu-btn" role="menuitem">Delete by ID</button>
+							</form>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<h3>Total number of names: <%= numOfRows %></h3>
+		<table>
+			<tr>
+				<th>ID</th>
+				<th>NAME</th>
+				<th>MEANING</th>
+				<th>NICKNAME</th>
+				<th>ORIGIN</th>
+				<th>VARIATION</th>
+			</tr>
+			<% data.forEach(name => { %>
+				<tr>
+					<td><%- name.id %></td>
+					<td><%- name.name %></td>
+					<td><%- name.meaning %></td>
+					<td><%- name.nickname %></td>
+					<td><%- name.origin %></td>
+					<td><%- name.variation %></td>
+				</tr>
+			<% }); %>
+		</table>
+	</form>
+</div>
+
+</body>
+
+<!-- Edit Menu Logic -->
+<script>
+	var el = document.querySelector('.more');
+	var btn = el.querySelector('.more-btn');
+	var menu = el.querySelector('.more-menu');
+	var visible = false;
+
+	function showMenu(e) {
+		e.preventDefault();
+		if (!visible) {
+			visible = true;
+			el.classList.add('show-more-menu');
+			menu.setAttribute('aria-hidden', false);
+			document.addEventListener('click', hideMenu, false);
+		}
+	}
+
+	function hideMenu(e) {
+		if (btn.contains(e.target)) {
+			return;
+		}
+		if (visible) {
+			visible = false;
+			el.classList.remove('show-more-menu');
+			menu.setAttribute('aria-hidden', true);
+			document.removeEventListener('click', hideMenu);
+		}
+	}
+
+	btn.addEventListener('click', showMenu, false);
+</script>
+
+<%- include("../partials/edit-footer.ejs") %>

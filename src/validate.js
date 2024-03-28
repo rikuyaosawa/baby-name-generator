@@ -37,6 +37,21 @@ export function validateName(data) {
 		return emptyError;
 	}
 
+	const rows = getNames(gender);
+	var listOfNames= [];
+
+	for (let i = 0; i < rows.length; i++) {
+		listOfNames.push(rows[i].name);
+	}
+
+	console.log(listOfNames);
+
 	console.log(success);
 	return "Success";
+}
+
+
+
+export function validateID(data) {
+
 }
