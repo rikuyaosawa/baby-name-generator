@@ -4,7 +4,16 @@
 <body class="edit-main">
 
 	<div class="main-block">
-
+		<h1 class="edit-header-text">Delete Name by ID</h1>
+		<% if (locals.error) { %>
+			<p>*<%= error %></p>
+		<% } %>
+		<form id="edit-name-form">
+			<input type="text" id="name-input" name="name" autofocus><br>
+		</form>
+		<form action="/edit/database" id="go-back-btn" method="get">
+			<input id="df-btn" type="submit" value="GO BACK">
+		</form>
 	</div>
 
 </body>

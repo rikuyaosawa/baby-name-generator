@@ -3,7 +3,7 @@ import bodyParser from "body-parser";
 import morgan from "morgan";
 
 import { getDatabase, getNameCount, getRandomName } from "./src/db_connect.js";
-import { validateName } from "./src/validateName.js";
+import { validateName } from "./src/validate.js";
 
 const app = express();
 const port = 3000;
@@ -65,12 +65,16 @@ app.get("/edit/girl-name-db", async (req, res) => {
   });
 });
 
+app.get("/edit/delete", (req, res) => {
+  res.render("edit/delete-name.ejs");
+});
 
-// app.get("/edit/delete", (req, res) => {
-//   res.render("edit/delete-name.ejs");
-// });
+app.post("/edit/delete/submit", (req, res) => {
+  const data = req.body;
+  console.log("ID for deletion inputed:", data);
+});
 
-app.post("/add-name", (req, res) => {
+app.post("/edit/add/submit", (req, res) => {
   const data = req.body;
   console.log("Name inputed\n", data);
   const result = validateName(data);
@@ -87,7 +91,7 @@ app.post("/add-name", (req, res) => {
   }
 });
 
-app.get("/confirm", (req, res) => {
+app.get("/edit/confirm", (req, res) => {
   res.render("edit/edit-confirmation.ejs", {
     success : "Name successfully added.",
   });

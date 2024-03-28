@@ -4,13 +4,13 @@
 <body class="edit-main">
 
   <div class="main-block">
-    <h1 class="add-name-header">Add Name</h1>
+    <h1 class="edit-header-text">Add Name</h1>
     <% if (locals.error) { %>
-      <p style="color: red;">*<%= error %></p>
+      <p class="err-msg">*<%= error %></p>
     <% } %>
-    <form action="/add-name" method="post" id="add-name-form">
 
-      <div class="add-name-form-items">
+    <form action="/edit/add/submit" method="post" id="edit-name-form">
+      <div>
         <label for="name">Name:</label>
         <input type="text" id="name-input" name="name" autofocus><br>
         <label for="meaning">Meaning:</label>
@@ -31,8 +31,8 @@
 
         <input type="submit" id="df-btn" value="SUBMIT">
       </div>
-
     </form>
+
   </div>
 
 </body>
