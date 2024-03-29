@@ -13,13 +13,7 @@ db.connect();
 
 export async function getRandomName(gender) {
 
-  let dbName;
-
-  if (gender === "boy") {
-    dbName = "boy_name";
-  } else if (gender === "girl") {
-    dbName = "girl_name";
-  }
+  const dbName = setDBname(gender);
 
   const result = await db.query(`
     SELECT *
@@ -35,13 +29,8 @@ export async function getRandomName(gender) {
 }
 
 export async function getDatabase(gender) {
-  let dbName;
 
-  if (gender === "boy") {
-    dbName = "boy_name";
-  } else if (gender === "girl") {
-    dbName = "girl_name";
-  }
+  const dbName = setDBname(gender);
 
   const result = await db.query(`
     SELECT *
@@ -53,13 +42,8 @@ export async function getDatabase(gender) {
 }
 
 export async function getNameCount(gender) {
-  let dbName;
 
-  if (gender === "boy") {
-    dbName = "boy_name";
-  } else if (gender === "girl") {
-    dbName = "girl_name";
-  }
+  const dbName = setDBname(gender);
 
   const result = await db.query(`
     SELECT COUNT(*)
@@ -74,19 +58,22 @@ export async function getNameCount(gender) {
 }
 
 export async function getNames(gender) {
-  let dbName;
 
-  if (gender === "boy") {
-    dbName = "boy_name";
-  } else if (gender === "girl") {
-    dbName = "girl_name";
-  }
+  const dbName = setDBname(gender);
 
   const result = await db.query(`
     SELECT name
     FROM ${dbName}
   `);
 
-  console.log(result.rows)
-  return result.rows
+  console.log(result.rows);
+  return result.rows;
+}
+
+function setDBname(gender) {
+  if (gender === "boy") {
+    return "boy_name";
+  } else if (gender === "girl") {
+    return "girl_name";
+  }
 }
