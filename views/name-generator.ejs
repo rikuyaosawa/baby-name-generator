@@ -4,35 +4,33 @@
 <div class="baby-icon">👶</div>
 
 <div class="main-block">
-  <% if (locals.fN_name) { %>
+  <% if (locals.fN_data) { %>
     <h1 class="main-name-plate">
-      <div class="first-name"><%= fN_name %></div>
-      <% if (mD_name) { %>
+      <div class="first-name"><%= fN_data.name %></div>
         <div class="middle-name" id="middle-name">
-          <%= mD_name %>
+          <%= mD_data.name %>
         </div>
-      <% } %>
       <div class="last-name">Osawa</div>
     </h1>
   <% } else { %>
     <h1 class="no-name-plate">Generate Names ⬇️</h1>
   <% } %>
 
-  <% if (locals.fN_name) { %>
-    <h3 class="sub-name-plate"><%= fN_meaning %> : <%= mD_meaning %></h3>
+  <% if (locals.fN_data) { %>
+    <h3 class="sub-name-plate"><%= fN_data.meaning %> : <%= mD_data.meaning %></h3>
     <div class="detail-container" id="detail-container">
       <div class="fN-container">
         <ul>
-          <li>Nickname: <%= fN_nickname %></li>
-          <li>Origin: <%= fN_origin %></li>
-          <li>Variation(s): <%= fN_variation %></li>
+          <li>Nickname: <%= fN_data.nickname %></li>
+          <li>Origin: <%= fN_data.origin %></li>
+          <li>Variation(s): <%= fN_data.variation %></li>
         </ul>
       </div>
       <div class="mD-container">
         <ul>
-          <li>Nickname: <%= mD_nickname %></li>
-          <li>Origin: <%= mD_origin %></li>
-          <li>Variation(s): <%= mD_variation %></li>
+          <li>Nickname: <%= mD_data.nickname %></li>
+          <li>Origin: <%= mD_data.origin %></li>
+          <li>Variation(s): <%= mD_data.variation %></li>
         </ul>
       </div>
     </div>
@@ -48,36 +46,6 @@
     </form>
   </div>
 
-</div>
-
-<script>
-  function toggleMiddleName() {
-    var x = document.getElementById("middle-name");
-    if (x.style.display === "none") {
-      x.style.display = "block";
-    } else {
-      x.style.display = "none";
-    }
-  }
-
-  function toggleNameDetail() {
-    var x = document.getElementById("detail-container");
-    if (x.style.display === "none") {
-      x.style.display = "flex";
-    } else {
-      x.style.display = "none";
-    }
-  }
-</script>
-
-<div class="toggle-btn-container">
-  <% if (locals.fN_name) { %>
-    <button id="toggle-mD-btn" onclick="toggleMiddleName()">toggle middle-name</button>
-  <% } %>
-
-  <% if (locals.fN_name) { %>
-    <button id="toggle-detail-btn" onclick="toggleNameDetail()">toggle detail</button>
-  <% } %>
 </div>
 
 <%- include("partials/footer.ejs") %>

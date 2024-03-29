@@ -1,5 +1,5 @@
-<%- include("partials/header.ejs") %>
-<%- include("partials/main-header.ejs") %>
+<%- include("../partials/header.ejs") %>
+<%- include("../partials/edit-main-header.ejs") %>
 
 <body class="edit-main">
 
@@ -17,14 +17,14 @@
 				<p><%= data.variation %></p>
 				<p><%= data.gender %></p>
 			</di>
-			<form action="/confirm" method="get">
+			<form action="/edit/confirm" method="get">
 				<input id="df-btn" type="submit" value="CONFIRM">
 			</form>
 		<% } %>
 
 		<% if (locals.success) { %>
-			<h1><%= success %></h1>
-			<form action="/edit/add" method="get">
+			<h1 class="success-msg"><%= success %></h1>
+			<form action="/edit/add" id="go-back-btn" method="get">
 				<input id="df-btn" type="submit" value="GO BACK">
 			</form>
 		<% } %>
@@ -33,3 +33,4 @@
 
 </body>
 
+<%- include("../partials/edit-footer.ejs") %>

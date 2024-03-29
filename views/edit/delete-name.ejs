@@ -1,0 +1,22 @@
+<%- include("../partials/header.ejs") %>
+<%- include("../partials/edit-main-header.ejs") %>
+
+<body class="edit-main">
+
+	<div class="main-block">
+		<h1 class="edit-header-text">Delete Name by ID</h1>
+		<% if (locals.error) { %>
+			<p>*<%= error %></p>
+		<% } %>
+		<form action="/" id="edit-name-form">
+			<input type="text" id="name-input" name="name" autofocus><br>
+			<input type="submit" id="df-btn" value="SUBMIT">
+		</form>
+		<form action="/edit/database" id="go-back-btn" method="get">
+			<input id="df-btn" type="submit" value="GO BACK">
+		</form>
+	</div>
+
+</body>
+
+<%- include("../partials/edit-footer.ejs") %>

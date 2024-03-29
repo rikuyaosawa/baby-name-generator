@@ -1,0 +1,68 @@
+<%- include("../partials/header.ejs") %>
+<%- include("../partials/edit-main-header.ejs") %>
+
+<body class="edit-main">
+
+  <div class="main-block">
+    <h1 class="edit-header-text">Add Name</h1>
+    <% if (locals.error) { %>
+      <p class="err-msg">*<%= error %></p>
+    <% } %>
+
+    <% if (locals.gender == "boy") { %>
+    <form action="/edit/boy-name-db/add/submit" method="post" id="edit-name-form">
+      <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name-input" name="name" autofocus><br>
+        <label for="meaning">Meaning:</label>
+        <input type="text" id="meaning-input" name="meaning"><br>
+        <label for="nickname">Nickname:</label>
+        <input type="text" id="nickname-input" name="nickname"><br>
+        <label for="origin">Origin:</label>
+        <input type="text" id="origin-input" name="origin"><br>
+        <label for="variation">Variation:</label>
+        <input type="text" id="name-input" name="variation"><br>
+
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender">
+          <option value="Empty"></option>
+          <option value="boy">Boy</option>
+          <option value="canada">Girl</option>
+        </select>
+
+        <input type="submit" id="df-btn" value="SUBMIT">
+      </div>
+    </form>
+    <% } else if (locals.gender == "girl") { %>
+    <form action="/edit/girl-name-db/add/submit" method="post" id="edit-name-form">
+      <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name-input" name="name" autofocus><br>
+        <label for="meaning">Meaning:</label>
+        <input type="text" id="meaning-input" name="meaning"><br>
+        <label for="nickname">Nickname:</label>
+        <input type="text" id="nickname-input" name="nickname"><br>
+        <label for="origin">Origin:</label>
+        <input type="text" id="origin-input" name="origin"><br>
+        <label for="variation">Variation:</label>
+        <input type="text" id="name-input" name="variation"><br>
+
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender">
+          <option value="Empty"></option>
+          <option value="boy">Boy</option>
+          <option value="canada">Girl</option>
+        </select>
+
+        <input type="submit" id="df-btn" value="SUBMIT">
+      </div>
+    </form>
+    <% } %>
+
+  </div>
+
+</body>
+
+</main>
+
+<%- include("../partials/edit-footer.ejs") %>
