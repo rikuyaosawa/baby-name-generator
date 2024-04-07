@@ -80,35 +80,42 @@ app.post("/edit/boy-name-db/add/submit", (req, res) => {
   const data = req.body;
   console.log("A name submitted:\n", data);
   const result = validateName(data);
-  if (result == "Success") {
-    res.render("edit/edit-confirmation.ejs", {
-      message : "You are about to add this name",
-      data : data
-    });
-  } else {
-    console.error("Error. Name failed to be added:", result);
+  if (result) {
+    
+  } else if (!result) {
+    console.error("Error. Name failed to be added");
     res.render("edit/add-name.ejs", {
-      error : result
+      error : "Error. Name failed to be added",
+      gender : "boy"
     });
-  }
+  } 
 });
 
 app.post("/edit/girl-name-db/add/submit", (req, res) => {
   const data = req.body;
   console.log("A name submitted:\n", data);
   const result = validateName(data);
-  if (result == "Success") {
-    res.render("edit/edit-confirmation.ejs", {
-      message : "You are about to add this name",
-      data : data
-    });
+  if (result) {
+    
   } else {
     console.error("Error. Name failed to be added:", result);
     res.render("edit/add-name.ejs", {
-      error : result
+      error : result,
+      gender : "girl"
     });
   }
 });
+
+// Confirm edit
+// app.get("/edit/boyconfirm", (req, res) => {
+//   res.render("edit/edit-confirmation.ejs", {
+//     success : "Name successfully added.",
+//   });
+// });
+
+// app.get("/edit/return", (req, res) => {
+//   res.redirect("/edit");
+// });
 
 // Delete names
 app.get("/edit/boy-name-db/delete", (req, res) => {
@@ -129,14 +136,6 @@ app.post("/edit/delete/submit", (req, res) => {
   const data = req.body;
   console.log("ID for deletion inputed:", data);
 });
-
-// Confirm edit
-app.get("/edit/confirm", (req, res) => {
-  res.render("edit/edit-confirmation.ejs", {
-    success : "Name successfully added.",
-  });
-});
-
 
 ///// GENERATOR /////
 app.get("/name-generator", (req, res) => {

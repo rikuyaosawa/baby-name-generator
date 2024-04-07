@@ -5,7 +5,7 @@
 
 	<div class="main-block">
 
-		<% if (locals.data) { %>
+		<% if (locals.gender == "boy") { %>
 			<!-- TODO: Style this -->
 			<div class="confirmation">
 				<h1>Are you sure?</h1>
@@ -17,14 +17,29 @@
 				<p><%= data.variation %></p>
 				<p><%= data.gender %></p>
 			</di>
-			<form action="/edit/confirm" method="get">
+			<form action="/edit/boy/confirm" method="get">
+				<input id="df-btn" type="submit" value="CONFIRM">
+			</form>
+		<% } else if (locals.gender == "girl") { %>
+			<!-- TODO: Style this -->
+			<div class="confirmation">
+				<h1>Are you sure?</h1>
+				<h2><%= message %></h2>
+				<p><%= data.name %></p>
+				<p><%= data.meaning %></p>
+				<p><%= data.nickname %></p>
+				<p><%= data.origin %></p>
+				<p><%= data.variation %></p>
+				<p><%= data.gender %></p>
+			</di>
+			<form action="/edit/girl/confirm" method="get">
 				<input id="df-btn" type="submit" value="CONFIRM">
 			</form>
 		<% } %>
-
+		
 		<% if (locals.success) { %>
 			<h1 class="success-msg"><%= success %></h1>
-			<form action="/edit/add" id="go-back-btn" method="get">
+			<form action="/edit/return" id="go-back-btn" method="get">
 				<input id="df-btn" type="submit" value="GO BACK">
 			</form>
 		<% } %>

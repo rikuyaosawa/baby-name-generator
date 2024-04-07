@@ -14,7 +14,6 @@ db.connect();
 export async function getRandomName(gender) {
 
   const dbName = setDBname(gender);
-
   const result = await db.query(`
     SELECT *
     FROM ${dbName}
@@ -24,14 +23,12 @@ export async function getRandomName(gender) {
 
   // console.log(result.rows)
   console.log(result.rows[0].name);
-
   return result.rows[0];
 }
 
 export async function getDatabase(gender) {
 
   const dbName = setDBname(gender);
-
   const result = await db.query(`
     SELECT *
     FROM ${dbName}
@@ -44,23 +41,19 @@ export async function getDatabase(gender) {
 export async function getNameCount(gender) {
 
   const dbName = setDBname(gender);
-
   const result = await db.query(`
     SELECT COUNT(*)
     FROM ${dbName}
   `);
 
   const count = result.rows[0].count;
-
   console.log(`Number of rows in ${dbName}: ${count}`);
-
   return count;
 }
 
 export async function getNames(gender) {
 
   const dbName = setDBname(gender);
-
   const result = await db.query(`
     SELECT name
     FROM ${dbName}

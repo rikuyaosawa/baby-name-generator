@@ -1,7 +1,6 @@
-export function validateName(data) {
+import { getNames } from "./db_connect.js";
 
-	const emptyError = "The field cannot be left empty";
-	const success = "Validation complete. No problem found.";
+export function validateName(data) {
 
 	if (data.name == "") {
 		return emptyError;
@@ -34,7 +33,7 @@ export function validateName(data) {
 	}
 
 	if (data.gender == "Empty") {
-		return emptyError;
+		return false;
 	}
 
 	const rows = getNames(gender);
@@ -42,15 +41,15 @@ export function validateName(data) {
 
 	for (let i = 0; i < rows.length; i++) {
 		listOfNames.push(rows[i].name);
+		if (rows[i].name == data.name) {
+			console.log(data.name, "already exists.");
+			return false;
+		}
 	}
 
-	console.log(listOfNames);
-
 	console.log(success);
-	return "Success";
+	return true;
 }
-
-
 
 export function validateID(data) {
 
